@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 # Read image
-im = cv2.imread("drillbit_images/no_color_variation.jpeg", cv2.IMREAD_GRAYSCALE)
+im = cv2.imread("drillbit_images/1655096659146.png", cv2.IMREAD_GRAYSCALE)
 resize_ratio = 2
 new_width = int(im.shape[1] * resize_ratio)
 new_height = int(im.shape[0] * resize_ratio)
@@ -16,16 +16,16 @@ params = cv2.SimpleBlobDetector_Params()
 
 # Change thresholds
 params.minThreshold = 20
-params.maxThreshold = 50
+params.maxThreshold = 85
 
 
 # Filter by Area.
 params.filterByArea = True
-params.minArea = 500
+params.minArea = 1000
 
 # Filter by Circularity
 params.filterByCircularity = True
-params.minCircularity = 0.1
+params.minCircularity = 0.7
 
 # Filter by Convexity
 params.filterByConvexity = True

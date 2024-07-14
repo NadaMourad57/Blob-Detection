@@ -14,7 +14,7 @@ im = cv2.resize(im, (new_width, new_height))
 blurred_image = cv2.GaussianBlur(im, (3, 3), 0)
 
 # Apply Canny edge detection
-edges = cv2.Canny(blurred_image, 20, 50)
+edges = cv2.Canny(blurred_image, 20,50 )
 
 # Apply morphological operations to enhance edges
 kernel = np.ones((4,4), np.uint8)
@@ -24,8 +24,8 @@ morph_edges = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel)
 params = cv2.SimpleBlobDetector_Params()
 
 # Change thresholds
-params.minThreshold = 50
-params.maxThreshold = 80
+params.minThreshold = 0
+params.maxThreshold = 255
 
 # Filter by Area.
 params.filterByArea = True
